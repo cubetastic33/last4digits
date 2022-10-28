@@ -12,11 +12,24 @@
     <h1>Last 4 Digits Calculator</h1>
     <form>
       <input id="number" type="text" placeholder="420-69-1234" autocomplete="off" autocorrect="off">
-      <button type="submit">Calculate!</button>
+      <button id="calculate" type="submit">Calculate!</button>
     </form>
     <label for="number">Enter your credit card number, phone number, SSN, or any other number you want to know the last 4 digits of!</label>
     <p id="result">&nbsp;</p>
+    <p>
+      Get instant, blazing fast results for any type of credit card, phone number, or other sensitive data! We promise 100% data security - any data we process is completely safe in our hands. You can trust us!
+      <br/><br/>
+      Get our app from the <a href="https://youtu.be/dQw4w9WgXcQ">Play Store</a> and <a href="https://youtu.be/dQw4w9WgXcQ">App Store</a> now!
+    </p>
   </section>
+  <div id="cookies">
+    <p>
+      This website would like to use cookies 🍪 to help serve you better!
+    </p>
+    <div>
+      <button id="accept">Accept</button>
+    </div>
+  </div>
 </body>
 <script>
   let patterns = {
@@ -49,15 +62,26 @@
     } else {
       for (let pattern of Object.keys(patterns)) {
         if (patterns[pattern].test(num)) {
-          result.innerText = `The last 4 digits of your ${pattern} are ${last4}`;
+          result.innerHTML = `The last 4 digits of your ${pattern} are <span>${last4}</span>`;
           updated = true;
         }
       }
     }
 
     if (!updated) {
-      result.innerText = `The last 4 digits are ${last4}`;
+      result.innerHTML = `The last 4 digits are <span>${last4}</span>`;
     }
   };
+
+  var accept = document.querySelector('#accept');
+  accept.onclick = () => {
+    if (accept.innerText == 'Accept') {
+      document.querySelector('#cookies p').innerText = 'You consented to cookie usage!';
+      accept.innerText = 'Okay';
+    } else {
+      document.querySelector('#cookies p').innerText = 'This website would like to use cookies 🍪 to help serve you better!';
+      accept.innerText = 'Accept';
+    }
+  }
 </script>
 </html>
