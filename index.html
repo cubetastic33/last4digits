@@ -19,12 +19,49 @@
     </form>
     <label for="number">Enter your credit card number, phone number, SSN, or any other number you want to know the last 4 digits of!</label>
     <p id="result">&nbsp;</p>
-    <p>
-      Get instant, blazing fast results for any type of credit card, phone number, or other sensitive data! We promise 100% data security - any data we process is completely safe in our hands. You can trust us!
-      <br/><br/>
-      Get our app from the <a href="https://youtu.be/dQw4w9WgXcQ">Play Store</a> and <a href="https://youtu.be/dQw4w9WgXcQ">App Store</a> now!
-    </p>
   </section>
+  <section class="features">
+    <div class="feature">
+      <i data-feather="zap"></i>
+      <p>
+        <em>Blazing</em> fast™
+      </p>
+    </div>
+    <div class="feature">
+      <i data-feather="shield"></i>
+      <p>
+        100% safe and secure
+      </p>
+    </div>
+    <div class="feature">
+      <i data-feather="upload-cloud"></i>
+      <p>
+        All numbers are saved securely on the cloud
+      </p>
+    </div>
+    <div class="feature">
+      <i data-feather="credit-card"></i>
+      <p>
+        Works with any type of credit card
+      </p>
+    </div>
+    <div class="feature">
+      <i data-feather="award"></i>
+      <p>
+        Tried and tested with thousands of credit cards, phone numbers, and SSNs
+      </p>
+    </div>
+    <div class="feature">
+      <i data-feather="download"></i>
+      <p>
+        <a href="https://youtu.be/dQw4w9WgXcQ">Install our app now!</a>
+      </p>
+    </div>
+  </section>
+  <footer>
+    © 2022 | Last 4 Digits
+    <a href="https://github.com/cubetastic33/last4digits" class="github"><i data-feather="github"></i>&nbsp;GitHub</a>
+  </footer>
   <div id="cookies">
     <p>
       This website would like to use cookies 🍪 to help serve you better!
@@ -34,7 +71,9 @@
     </div>
   </div>
 </body>
+<script src="feather.min.js"></script>
 <script>
+  feather.replace();
   let patterns = {
     "phone number": /^(\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*)$/,
     "SSN": /^(([0-9][0-9][0-9])(?<!666|000|9[0-9][0-9])(=|\+|_|\#|:|;|\.|-|\s){0,3}([1-9][1-9]|0[1-9]|[1-9]0)(=|\+|_|\#|:|;|\.|-|\s){0,3}([0-9][0-9][0-9][0-9])(?<!0000)(=|\+|_|\#|:|;|\.|-|\s){0,3}?)$/,
@@ -78,6 +117,8 @@
 
   var accept = document.querySelector('#accept');
   accept.onclick = () => {
+    document.querySelector('#cookies').style = 'display: none';
+    setTimeout(() => {document.querySelector('#cookies').style = 'display: flex';}, 5000);
     if (accept.innerText == 'Accept') {
       document.querySelector('#cookies p').innerText = 'You consented to cookie usage!';
       accept.innerText = 'Okay';
