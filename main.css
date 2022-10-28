@@ -141,7 +141,7 @@ footer a {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1em;
   width: calc(100vw - 2em);
-  margin: auto;
+  margin: 1em auto;
 }
 
 .feature {
