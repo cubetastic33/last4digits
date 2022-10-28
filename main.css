@@ -184,6 +184,20 @@ footer a {
   }
 }
 
+#cookies p span:first-child {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  #cookies p span:first-child {
+    display: block;
+  }
+
+  #cookies p span:last-child {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .features {
     grid-template-columns: 1fr;
